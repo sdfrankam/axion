@@ -4,7 +4,7 @@
 #include <fstream>
 #include "fields.h"
 
-
+//внесла изменения
 void Step_1(vector<double>& E1, vector< double>& K1, double z, double y) {
 
     Matrix_reverse(E1);
