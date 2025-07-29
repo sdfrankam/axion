@@ -3,7 +3,7 @@
 #include <vector>
 #include <cmath>
 using namespace std;
-#define M_PI 3.14159
+
 #define h (pow(10, -5))
 #define g (1.0-1.0/sqrt(2))
 #define b (1.0-1.0/sqrt(2))
