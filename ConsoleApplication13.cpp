@@ -27,8 +27,8 @@ void Step_3(vector<double>& Y_n, vector<double>& K1, vector<double>& K2, double 
 int main()
 {
     ofstream csv_teta, csv_dteta, csv_time, csv_integral, csv_time_2;
-    csv_teta.open("teta_q.txt");
-    csv_dteta.open("dteta_q.txt");
+    csv_teta.open("teta_q.csv");
+    csv_dteta.open("dteta_q.csv");
     csv_time.open("time.txt");
     csv_integral.open("integral_kin.txt");
     csv_time_2.open("time_for_integral.txt");
@@ -36,7 +36,7 @@ int main()
     vector< double> K1 = { 0,0 }, K2 = { 0,0 }, E1{ 0,0,0,0 }, J = { 0,0,0,0 };
     vector<double> f, t;
     double I0 = 1;
-    for (int i = 0; i < 3*pow(10, 5); i++) {
+    for (int i = 0; i < 3.5*pow(10, 6); i++) {
         double  z = Y_n[0], y = Y_n[1];
         eq1(E1, J, z, y);
         Step_1(E1, K1, z, y);
@@ -45,7 +45,7 @@ int main()
         //if (z>=400 || z<=-400) {
         //    cerr << "z is to big";
         //}
-        csv_teta << Y_n[1] << endl;
+        csv_teta << Y_n[1] << "," << h*i << endl;
         csv_dteta << k*exp(Y_n[0]) << endl;
         if(h*i)
         //cout << Y_n[0] * Y_n[0] / 2 + Y_n[1] * Y_n[1] / 2 << endl;
