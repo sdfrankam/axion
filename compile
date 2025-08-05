@@ -6,5 +6,6 @@ g++ ConsoleApplication15.cpp -o densities
 ./densities
 echo "Densities done"
 gnuplot -persist plot_densities.plt
-echo "Graph done"
+gnuplot -persist plot_full_energi.plt
+echo "Graphs done"
 

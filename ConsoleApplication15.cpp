@@ -11,12 +11,13 @@ int main()
 {
     double L_4 = pow(0.05, 4);
     ifstream csv_y, csv_z;
-    ofstream /*rho_X, rho_V*/ data;
+    ofstream /*rho_X, rho_V*/ data, full_energy;
     csv_y.open("teta_q.csv");
     csv_z.open("dteta_q.csv");
     //rho_X.open("rho_x.csv");
     //rho_V.open("rho_v.csv");
     data.open("data.csv");
+    full_energy.open("full_energy.csv");
     string line1, line2, line2_y, line2_t;
     int i = 0;
     double r0;
@@ -54,10 +55,12 @@ int main()
         double a = 5.0;
         r0 = (2*a*a*a-a)*pow(z*z/2.0, a*a)+L_4*(1-cos(y));
         data << t << "," << (2 * a * a * a - a) * pow(z * z / 2.0, a * a)/r0 << "," << L_4 *(1-cos(y))/ r0 <<  endl;
-        
+        full_energy << t << "," << r0 << endl;
     }
     csv_y.close();
     csv_z.close();
+    full_energy.close();
+    data.close();
     //rho_X.close();
     //rho_V.close();
 }

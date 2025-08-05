@@ -36,7 +36,7 @@ int main()
     vector< double> K1 = { 0,0 }, K2 = { 0,0 }, E1{ 0,0,0,0 }, J = { 0,0,0,0 };
     vector<double> f, t;
     double I0 = 1;
-    for (int i = 0; i < 3.5*pow(10, 6); i++) {
+    for (int i = 0; i < 3.5*pow(10, 2); i++) {
         double  z = Y_n[0], y = Y_n[1];
         eq1(E1, J, z, y);
         Step_1(E1, K1, z, y);
