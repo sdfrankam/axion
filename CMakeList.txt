@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.31.6) # проверка версии CMake.
+# Если версия установленной программы # старее указанной,
+произойдет аварийный выход.
+project(Axion) # название проекта
+set(SOURCE_EXE main.cpp) # установка переменной со списком исходников для
+# исполняемого файла
+file (GLOB_RECURSE CPP_FILES *.cpp ) # установка переменной для исходников с расширением cpp
+# (рекурсивный поиск по всем подпапкам)
+set(SOURCE_LIB ${CPP_FILES}) # установка переменной со списком исходников
+# для библиотеки
+add_library(MyLib STATIC ${SOURCE_LIB}) # добавление статической библиотеки с именем MyLib
+add_executable(main ${SOURCE_EXE}) # добавление исполняемого файла с именем main
+target_link_libraries(main MyLib) # линковка программы с библиотекой

@@ -1,0 +1,10 @@
+#!/bin/bash
+g++ ConsoleApplication13.cpp -o fields
+./fields
+echo "Fields done"
+g++ ConsoleApplication15.cpp -o densities
+./densities
+echo "Densities done"
+gnuplot -persist plot_densities.plt
+echo "Graph done"
+

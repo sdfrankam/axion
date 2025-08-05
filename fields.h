@@ -4,7 +4,7 @@
 #include <cmath>
 using namespace std;
 
-#define h (pow(10, -5))
+#define h (pow(10, -11))
 #define g (1.0-1.0/sqrt(2))
 #define b (1.0-1.0/sqrt(2))
 #define p1 (1.0-1.0/sqrt(2))
